@@ -1,12 +1,13 @@
-# GraphEMD
+# paper-multiscale-emd-graphs
 
-Repository for the paper *Empirical Mode Decomposition and Graph Transformation of Financial Series* (Agustín M. de los Riscos, Ana Lazcano, Julio E. Sandubete).
+Replication repository for the paper *Empirical Mode Decomposition and Graph Transformation of Financial Series* (Agustín M. de los Riscos, Ana Lazcano, Julio E. Sandubete).
 
 ## Contents
 
 | Directory | Description |
 |------------|-------------|
 | `data/` | Input price series (parquet) for the empirical panel in the paper |
+| `docs/` | Figure assets and intermediate outputs for the manuscript (`docs/20abr26/`) |
 | `src/python/GraphEMD/` | Library: IMF→graph transformation, synthetic signals, and other transformations |
 | `src/python/CommonUtils/` | Minimal shared utilities (`DictClass`) |
 | `scripts/` | Paper pipelines: empirical panel, emdsynth, MSCI exploration |
@@ -33,7 +34,8 @@ To regenerate the files from Yahoo Finance, use the download scripts under `scri
 ## Installation
 
 ```bash
-cd GraphEMD
+git clone https://github.com/MultiEMDGraphsTS/paper-multiscale-emd-graphs.git
+cd paper-multiscale-emd-graphs
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
@@ -49,9 +51,10 @@ PYTHONPATH=src/python python scripts/run_vmd_all_assets.py
 # Synthetic benchmark (EMD/EEMD/CEEMDAN/VMD)
 PYTHONPATH=src/python python scripts/emdsynth/run_emdsynth_decompositions.py
 
-# Figures for the paper (output in PAPER/figures/)
-PYTHONPATH=src/python python scripts/generate_decomposition_panel_figure.py
-PYTHONPATH=src/python python scripts/generate_ica_panel_figure.py
+# Figures for the paper (output in docs/20abr26/images/english/)
+PYTHONPATH=src/python python scripts/generate_decomposition_panel_figure.py --copia-docs
+PYTHONPATH=src/python python scripts/generate_ica_panel_figure.py \
+  --salida-png docs/20abr26/images/english/ica_components_panel.png
 ```
 
 ## License
