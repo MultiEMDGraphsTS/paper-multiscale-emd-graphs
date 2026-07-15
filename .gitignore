@@ -20,6 +20,7 @@ build/
 
 # Datos y artefactos generados (regenerables)
 outputs/
+docs/
 scripts/out/
 scripts/emdsynth/out/
 scripts/exploration/out_msci_world_grafos/
