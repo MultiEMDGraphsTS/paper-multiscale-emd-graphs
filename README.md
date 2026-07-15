@@ -1,7 +1,5 @@
 # paper-multiscale-emd-graphs
 
-Replication repository for the paper *Empirical Mode Decomposition and Graph Transformation of Financial Series* (Agustín M. de los Riscos, Ana Lazcano, Julio E. Sandubete).
-
 ## Contents
 
 | Directory | Description |
